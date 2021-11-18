@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	 <!-- Menus -->
+    <menuitem id="facture_ecash_root" name="Facturation Ecash"/>
+<!--    menu Facturation-->
+        <menuitem id="facturation_root_menu" parent="facture_ecash_root" name="Facturation" sequence="1"/>
+        <!--    facturation.add-->
+<!--            <menuitem id="facture_add_menu" name="Ajouter" parent="facturation_root_menu" action="facturation_action_view"/>-->
+
+</odoo>

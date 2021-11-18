@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+	<record model="ir.ui.view" id="inherit_account_invoice">
+		 <field name="name">account.invoice.tree.inherit</field>
+		 <field name="model">account.move</field>
+		 <field name="type">tree</field>
+		 <field name="inherit_id" ref="account.view_invoice_tree"/>
+		<field name="arch" type="xml">
+			  <field name="amount_untaxed_signed" position="replace"/>
+			  <field name="amount_tax_signed" position="replace"/>
+<!--			<field name="amount_residual_signed" position="replace">-->
+<!--			 	<field name="amount_total" string="Montant b"/>-->
+<!--			</field>-->
+		</field>
+
+	</record>
+
+	<record model="ir.ui.view" id="account_move_inherit_form_view">
+	          <field name="name">account.move.form</field>
+	          <field name="model">account.move</field>
+	          <field name="type">form</field>
+	          <field name="inherit_id" ref="account.view_move_form"/>
+	          <field name="arch" type="xml">
+				  <field name="quantity" position="replace"/>
+				  <field name="price_unit" position="after">
+
+					  <field name="applique_pourcentage_benefice" attrs="{'readonly' : [('applique_montant_benefice', '=', True)]}"/>
+
+					  <field name="le_pourcentage"/>
+					  <field name="pourcentage_40"/>
+					  <field name="applique_montant_benefice"/>
+					  <field name="montant_benefice"/>
+					  <field name="pourcentage_40_benefice"/>
+				  </field>
+				  <field name="tax_ids" position="replace"/>
+				  <field name="price_subtotal" position="replace"/>
+			  </field>
+	 </record>
+
+</odoo>
